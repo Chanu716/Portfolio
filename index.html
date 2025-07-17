@@ -1,35 +1,47 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chanikya's Portfolio</title>
+    <title>Chanikya Karri - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>Loading Portfolio...</h2>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Chanikya Karri</a>
+                <a href="#home">
+                    <span class="logo-text">Chanikya</span>
+                    <span class="logo-dot">.</span>
+                </a>
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                    <a href="#about" class="nav-link" data-section="about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#skills" class="nav-link" data-section="skills">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
                 </li>
             </ul>
             <div class="nav-toggle" id="mobile-menu">
@@ -42,37 +54,79 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-particles"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
+                    <div class="hero-greeting">
+                        <span class="greeting-text">Hello, I'm</span>
+                    </div>
                     <h1 class="hero-title">
-                        Hi, I'm <span class="highlight">Chanikya Karri</span>
+                        <span class="name-chanikya">Chanikya</span>
+                        <span class="name-karri">Karri</span>
                     </h1>
-                    <p class="hero-subtitle">Full Stack Developer & Problem Solver</p>
+                    <div class="hero-roles">
+                        <span class="role-text">I'm a </span>
+                        <span class="typed-text" id="typedText"></span>
+                        <span class="cursor">|</span>
+                    </div>
                     <p class="hero-description">
-                        I'm a detail-focused student who thrives in dynamic settings and adapts quickly to new challenges. 
-                        With strong technical and problem-solving skills in web development (HTML, CSS, PHP, MySQL), 
-                        programming languages (Python, C, C++), and creative tools like video editing with CapCut, 
-                        I learn fast and work well in teams. I'm eager to apply my academic knowledge and diverse 
-                        skill set to real-world projects and contribute to innovative solutions.
+                        A passionate full-stack developer and designer who transforms ideas into elegant digital solutions. 
+                        I specialize in creating seamless user experiences with modern technologies, clean code, and thoughtful design.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Let's Connect</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://github.com/Chanu716" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/chanikya-716-karri" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/chanu_716" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="hero-placeholder">
-                        <i class="fas fa-user-circle"></i>
-                        <p>Add Your Photo Here</p>
+                    <div class="image-container">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user-circle"></i>
+                            <p>Your Photo</p>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="floating-icon" style="--delay: 0s;">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="floating-icon" style="--delay: 1s;">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="floating-icon" style="--delay: 2s;">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="floating-icon" style="--delay: 3s;">
+                                <i class="fas fa-database"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <a href="#about">
-                <i class="fas fa-chevron-down"></i>
-            </a>
+        <div class="scroll-down">
+            <div class="scroll-indicator">
+                <span></span>
+            </div>
+            <p>Scroll Down</p>
         </div>
     </section>
 
@@ -81,27 +135,53 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know me better</p>
+                <p class="section-subtitle">Discover my journey and passion</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Hello! I'm Chanikya Karri</h3>
-                    <p>
-                        I'm a passionate student developer with a strong foundation in both front-end and back-end technologies. 
-                        My journey in programming started with C and C++, which gave me solid problem-solving fundamentals. 
-                        I've since expanded into web development with HTML, CSS, PHP, and MySQL, allowing me to build complete web applications.
-                    </p>
-                    <p>
-                        Beyond coding, I have a creative side that I express through video editing using CapCut. 
-                        I believe in continuous learning and enjoy taking on new challenges that push me out of my comfort zone. 
-                        My goal is to bridge the gap between academic knowledge and practical application in the tech industry.
-                    </p>
-                    
+                    <div class="about-intro">
+                        <h3>Hello! I'm Chanikya Karri</h3>
+                        <p class="highlight-text">
+                            A passionate developer and designer who believes in the power of clean code and elegant solutions.
+                        </p>
+                    </div>
+                    <div class="about-description">
+                        <p>
+                            My journey in programming began with C and C++, which gave me a solid foundation in 
+                            problem-solving and algorithmic thinking. I've since expanded into web development, 
+                            mastering HTML, CSS, PHP, and MySQL to build complete web applications.
+                        </p>
+                        <p>
+                            Beyond coding, I have a creative side that I express through video editing and UI/UX design. 
+                            I believe in continuous learning and enjoy taking on challenges that push me to grow. 
+                            My goal is to create digital experiences that not only work flawlessly but also delight users.
+                        </p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Years Learning</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-image">
-                    <div class="about-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Add Your Photo Here</p>
+                    <div class="about-card">
+                        <div class="card-content">
+                            <div class="profile-placeholder">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>Passionate Developer & Designer</h4>
+                            <p>Always learning, always creating</p>
+                        </div>
+                        <div class="card-glow"></div>
                     </div>
                 </div>
             </div>
@@ -113,85 +193,130 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">My Skills</h2>
-                <p class="section-subtitle">A Look at My Skill Set</p>
+                <p class="section-subtitle">Technologies I work with</p>
             </div>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-html5"></i>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3 class="category-title">Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <h4>HTML5</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <h4>CSS3</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <h4>JavaScript</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="80"></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>HTML5</h3>
-                    <p>Semantic markup and modern HTML5 features for web structure</p>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-css3-alt"></i>
+                
+                <div class="skills-category">
+                    <h3 class="category-title">Backend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h4>Python</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-php"></i>
+                            </div>
+                            <h4>PHP</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>MySQL</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="80"></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>CSS3</h3>
-                    <p>Responsive design, Flexbox, Grid, and smooth animations</p>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
+                
+                <div class="skills-category">
+                    <h3 class="category-title">Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>C/C++</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="88"></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Python</h3>
-                    <p>Data structures, algorithms, and application development</p>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
+                
+                <div class="skills-category">
+                    <h3 class="category-title">Design & Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-figma"></i>
+                            </div>
+                            <h4>Figma</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h4>UI/UX Design</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h4>Webflow</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h4>Video Editing</h4>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="75"></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>C/C++</h3>
-                    <p>System programming and competitive programming fundamentals</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-php"></i>
-                    </div>
-                    <h3>PHP</h3>
-                    <p>Server-side scripting and dynamic web development</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>MySQL</h3>
-                    <p>Database design, queries, and data management</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3>Video Editing</h3>
-                    <p>Creative content creation and editing with CapCut</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>CapCut</h3>
-                    <p>Mobile video editing and creative content production</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Webflow</h3>
-                    <p>Building responsive websites with no-code tools</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-figma"></i>
-                    </div>
-                    <h3>Figma</h3>
-                    <p>Collaborative interface design and prototyping</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-swatchbook"></i>
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>Creating intuitive and user-centered designs</p>
                 </div>
             </div>
         </div>
@@ -201,81 +326,119 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Projects</h2>
+                <h2 class="section-title">Featured Projects</h2>
                 <p class="section-subtitle">Some of my recent work</p>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/Chanu716/CppProject" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>  
                     <div class="project-image">
-                        <i class="fas fa-car-side fa-4x" style="color: #7c3aed;"></i>
+                        <div class="project-placeholder">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Chanu716/CppProject" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
+                        <div class="project-category">C++ Application</div>
                         <h3>Ride Sharing App</h3>
-                        <p>A C++ based ride sharing application that matches riders and drivers efficiently, demonstrating strong algorithmic and system design skills.</p>
-                        <div class="project-tags">
-                            <span class="tag">C++</span>
+                        <p>A sophisticated C++ based ride sharing application that efficiently matches riders and drivers using advanced algorithms and system design principles.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Algorithms</span>
+                            <span class="tech-tag">System Design</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-overlay">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-deaf"></i>
+                        </div>
+                        <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/Chanu716/AudioToSignLanguageConverter" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/Chanu716/AudioToSignLanguageConverter" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
                             </div>
                         </div>
-                    <div class="project-image">
-                        <i class="fas fa-deaf fa-4x" style="color: #a855f7;"></i>
                     </div>
                     <div class="project-content">
+                        <div class="project-category">Python AI</div>
                         <h3>Audio to Sign Language Converter</h3>
-                        <p>Python project that converts spoken audio into sign language gestures, making communication more accessible for the hearing impaired.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Python libraries</span>
+                        <p>An innovative Python application that converts spoken audio into sign language gestures, making communication more accessible for the hearing impaired community.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Audio Processing</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-overlay">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-overlay">
                             <div class="project-links">
-                                <a href="http://github.com/Chanu716/Python-Project" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="http://github.com/Chanu716/Python-Project" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
                             </div>
                         </div>
-                    <div class="project-image">
-                        <i class="fas fa-chart-line fa-4x" style="color: #38bdf8;"></i>
                     </div>
                     <div class="project-content">
+                        <div class="project-category">Data Analysis</div>
                         <h3>Real-Time Stock Market Analysis</h3>
-                        <p>Developed using Python libraries, this tool provides real-time analysis and visualization of stock market trends and data.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">React</span>
+                        <p>A comprehensive tool built with Python libraries that provides real-time analysis and visualization of stock market trends and financial data.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Data Analysis</span>
+                            <span class="tech-tag">Visualization</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-overlay">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/Chanu716/-FYCA-E-Commerce-Website" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/Chanu716/-FYCA-E-Commerce-Website" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
                             </div>
                         </div>
-                    <div class="project-image">
-                        <i class="fas fa-shopping-cart fa-4x" style="color: #f59e42;"></i>
                     </div>
                     <div class="project-content">
+                        <div class="project-category">Full Stack Web</div>
                         <h3>E-commerce Website</h3>
-                        <p>Fully responsive e-commerce site built with HTML, CSS, and JavaScript, featuring product listings, cart, and checkout functionality.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
+                        <p>A fully responsive e-commerce platform featuring product listings, shopping cart, user authentication, and secure payment processing.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
                         </div>
                     </div>
                 </div>
@@ -287,51 +450,90 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's work together</p>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">Ready to bring your ideas to life</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>
-                        I'm always interested in new opportunities and interesting projects. 
-                        Whether you have a question or just want to say hi, feel free to reach out!
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>karrichanikya@gmail.com</span>
+                    <div class="contact-card">
+                        <h3>Get In Touch</h3>
+                        <p>I'm always excited to work on new projects and collaborate with amazing people. Let's create something extraordinary together!</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>karrichanikya@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Phone</h4>
+                                    <p>+91 9182789929</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Location</h4>
+                                    <p>Visakhapatnam, India</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+91 9182789929</span>
+                        
+                        <div class="contact-social">
+                            <h4>Follow Me</h4>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/chanikya-716-karri" target="_blank" class="social-link">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/Chanu716" target="_blank" class="social-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.instagram.com/chanu_716" target="_blank" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Visakhapatnam, India</span>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/chanikya-716-karri" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/Chanu716" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://www.instagram.com/chanu_716" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contact-form">
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <label for="name">Your Name</label>
                         </div>
+                        
                         <div class="form-group">
                             <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <label for="email">Your Email</label>
                         </div>
+                        
                         <div class="form-group">
                             <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            <label for="subject">Subject</label>
                         </div>
+                        
                         <div class="form-group">
                             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -342,13 +544,37 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Chanikya Karri. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+                <div class="footer-brand">
+                    <h3>Chanikya Karri</h3>
+                    <p>Full Stack Developer & Creative Designer</p>
                 </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/chanikya-716-karri" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Chanu716" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/chanu_716" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Chanikya Karri. All rights reserved.</p>
             </div>
         </div>
     </footer>
